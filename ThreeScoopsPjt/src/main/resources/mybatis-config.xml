@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		<!-- java의 null값을 db의 어떤 타입으로 매핑할 것인가를 결정한다.
+		ex) java의 null값을 오라클의 NULL로 매핑 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		
+	</settings>
+	<typeAliases>
+		<typeAlias alias="RepBoard" type="com.threescoops.vo.RepBoard"/>
+		<typeAlias alias="OrderLine" type="com.threescoops.vo.OrderLine"/>
+		<typeAlias alias="OrderInfo" type="com.threescoops.vo.OrderInfo" />
+		<typeAlias alias="Customer" type="com.threescoops.vo.Customer" />
+		<typeAlias alias="Product" type="com.threescoops.vo.Product" />
+
+	</typeAliases>
+  	<mappers>
+     	<!-- SQL구문이 저장될 MAPPER파일이 필요한데, 그게 BlogMapper.xml이다. -->
+    	<mapper resource="RepBoardMapper.xml"/>
+    	<mapper resource="OrderMapper.xml"/>
+
+  	</mappers>
+</configuration>
